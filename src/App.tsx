@@ -1,28 +1,23 @@
-import Clients from "./component/ui/Clients";
-import Confidence from "./component/ui/Confidence";
-import Footer from "./component/ui/Footer";
-import Hero from "./component/ui/Hero";
-import Navbar from "./component/ui/NavBar";
-import Pricing from "./component/ui/Pricing";
-import Skills from "./component/ui/Skills";
-import Works from "./component/ui/Works";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const components = [
-    Navbar,
-    Hero,
-    Skills,
-    Clients,
-    Pricing,
-    Works,
-    Confidence,
-    Footer,
+    { Comp: Dashboard, path: "/" },
+    { Comp: AboutUs, path: "/about-us" },
+    { Comp: ContactUs, path: "/contact-us" },
   ];
   return (
     <>
-      {components.map((Component, idx) => {
-        return <Component key={idx} />;
-      })}
+      <BrowserRouter>
+        <Routes>
+          {components.map((data, idx) => {
+            return <Route key={idx} path={data.path} element={<data.Comp />} />;
+          })}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

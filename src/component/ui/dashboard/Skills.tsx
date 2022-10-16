@@ -1,4 +1,5 @@
 import React from "react";
+import Wave from "../../assets/Wave";
 
 type SkillsProps = {
   children?: React.ReactElement;
@@ -30,10 +31,11 @@ const Skills: React.FC<SkillsProps> = (props) => {
 
   return (
     <>
-      <section className="w-full grid grid-cols-3 place-items-center text-center">
+      <section className="relative w-full grid grid-cols-1 md:grid-cols-3 place-items-center text-center">
+        <Wave />
         {captions.map((caption, idx) => {
           return (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mt-20">
               <div className="py-5">Logo</div>
               <div className="w-3/4 py-1 font-semibold">
                 <p>{caption.header}</p>

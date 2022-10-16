@@ -17,10 +17,10 @@ const Clients: React.FC<ClientsProps> = (props) => {
   return (
     <>
       <section className="w-2/3 py-10 mx-auto text-center">
-        <div className="py-5 text-4xl">
+        <div className="py-5 text-2xl md:text-4xl">
           <h2>Our Precious Clients:</h2>
         </div>
-        <div className="grid grid-cols-6 place-items-center">
+        <div className="grid grid-cols-4 md:grid-cols-6 place-items-center">
           {clientsData.map((data, idx) => {
             return (
               <div>
